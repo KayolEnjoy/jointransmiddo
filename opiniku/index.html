@@ -75,6 +75,12 @@
             pointer-events: none;
             opacity: 0.6;
         }
+        @media screen and (max-width: 768px){
+            .fh5co-nav-toggle {
+                display: none;
+            }
+        }
+
     </style>
 
 	</head>
@@ -92,7 +98,7 @@
 	  </div>
 	  <!-- ***** Preloader End ***** -->
 	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
+	<nav class="fh5co-nav">
 		<div class="container-wrap">
 			<div class="top-menu">
 				<div class="row">
@@ -108,7 +114,7 @@
 		<aside id="fh5co-hero">
 			<div class="flexslider">
 				<ul class="slides">
-					<li style="background-image: url(../assets/images/base/opini.png);">
+					<li style="background-image: url(../assets/images/base/opini.jpg);">
 					</li>
 				</ul>
 			</div>
@@ -147,35 +153,35 @@
                                         <input type="hidden" name="form_type" value="Berita">
                                         <div class="mb-3">
                                             <label for="beritaJudul" class="form-label">Judul Berita</label>
-                                            <input type="text" class="form-control" id="beritaJudul" name="judul" required>
+                                            <input type="text" class="form-control" id="beritaJudul" name="judul" placeholder="Contoh : Demi Keluarga, Ibu rela live mandi lumpur." required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="beritaIsi" class="form-label">Isi Berita</label>
-                                            <textarea class="form-control" id="beritaIsi" name="isi" rows="5" required></textarea>
+                                            <textarea class="form-control" id="beritaIsi" name="isi" rows="5" placeholder="Isi Berita disini" required></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="beritaPenulis" class="form-label">Nama Penulis</label>
-                                            <input type="text" class="form-control" id="beritaPenulis" name="penulis" required>
+                                            <input type="text" class="form-control" id="beritaPenulis" name="penulis" placeholder="Contoh : Abdi Rafif Abid" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="beritaKontak" class="form-label">Kontak Penulis (Email/Telepon)</label>
-                                            <input type="text" class="form-control" id="beritaKontak" name="kontak" required>
+                                            <input type="text" class="form-control" id="beritaKontak" name="kontak" placeholder="Contoh : babachong@gmail.com / +62 887 5556 8989"  required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="beritaTanggal" class="form-label">Tanggal Kegiatan</label>
-                                            <input type="date" class="form-control" id="beritaTanggal" name="tanggal" required>
+                                            <input type="date" class="form-control" id="beritaTanggal" name="tanggal" placeholder="Contoh : 17 Juli 2024" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="beritaLokasi" class="form-label">Lokasi Kegiatan</label>
-                                            <input type="text" class="form-control" id="beritaLokasi" name="lokasi" required>
+                                            <input type="text" class="form-control" id="beritaLokasi" name="lokasi" placeholder="Contoh : Pringlangu, Pekalongan barat, Kota Pekalongan" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="beritaKutipan" class="form-label">Kutipan Tokoh/Narasumber</label>
-                                            <textarea class="form-control" id="beritaKutipan" name="kutipan" rows="3" required></textarea>
+                                            <textarea class="form-control" id="beritaKutipan" name="kutipan" rows="3" placeholder="Isi Kutipan Disini" required></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="beritaFoto" class="form-label">Tautan Dokumentasi</label>
-                                            <input type="text" class="form-control" id="beritaFoto" name="dokumentasi" required>
+                                            <input type="text" class="form-control" id="beritaFoto" name="dokumentasi" placeholder="Contoh : https://drive.google.com/drive/folders/1zLR6WctlS9EhvieO8X2ApAo-IlbHJXMU?usp=sharing" required>
                                         </div>
                                         <button type="submit" class="btn btn-berita">Kirim Formulir</button>
                                     </form>
@@ -187,23 +193,23 @@
                                         <input type="hidden" name="form_type" value="Cerita/Opini">
                                         <div class="mb-3">
                                             <label for="ceritaJudul" class="form-label">Judul Cerita/Opini</label>
-                                            <input type="text" class="form-control" id="ceritaJudul" name="judul" required>
+                                            <input type="text" class="form-control" id="ceritaJudul" name="judul" placeholder="Contoh : Cerita Rakyat, Asal Usul Kota Pekalogan" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="ceritaIsi" class="form-label">Isi Cerita/Opini</label>
-                                            <textarea class="form-control" id="ceritaIsi" name="isi" rows="5" required></textarea>
+                                            <textarea class="form-control" id="ceritaIsi" name="isi" rows="5" placeholder="Tulikan isinya disini" ></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="ceritaPenulis" class="form-label">Nama Penulis</label>
-                                            <input type="text" class="form-control" id="ceritaPenulis" name="penulis" required>
+                                            <input type="text" class="form-control" id="ceritaPenulis" name="penulis" placeholder="Contoh : Abdi Rafif" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="ceritaKontak" class="form-label">Kontak Penulis (Email/Telepon)</label>
-                                            <input type="text" class="form-control" id="ceritaKontak" name="kontak" required>
+                                            <input type="text" class="form-control" id="ceritaKontak" name="kontak" placeholder="Contoh : babachong@gmail.com / +62 887 5556 8989" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="ceritaKategori" class="form-label">Kategori Cerita/Opini</label>
-                                            <input type="text" class="form-control" id="ceritaKategori" name="kategori" required>
+                                            <input type="text" class="form-control" id="ceritaKategori" name="kategori" placeholder="Contoh : Cerita" required>
                                         </div>
                                         <button type="submit" class="btn btn-cerita">Kirim Formulir</button>
                                     </form>
