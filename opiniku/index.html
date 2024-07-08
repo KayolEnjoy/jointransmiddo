@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="id">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ikatan Pelajar Muhammadiyah - Organisasi Pelajar Kota pekalongan</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Ikatan Pelajar Muhammadiyah (IPM) Kota Pekalongan adalah organisasi yang berkomitmen untuk mengembangkan potensi pelajar melalui berbagai kegiatan edukatif" />
+	<meta name="keywords" content="Pelajar, Pendidikan, Belajar, Soliditas, Kerjasama, Persatuan, Kedisiplinan, Kepemimpinan, Prestasi, Komunitas, Pelajar aktif, Ekstrakurikuler, Kegiatan sekolah, Teamwork, Organisasi pelajar, Solidaritas pelajar, Pengembangan diri, Kepedulian sosial, Motivasi belajar, Generasi muda" />
+	<meta name="author" content="ipm kota batik" />
+
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="https://pelajarkotabatik.org/logo.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="https://pelajarkotabatik.org/logo.png">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../sc/css/animate.css">
+	<!-- Awesomee Icon Fonts-->
+	<link rel="stylesheet" href="sc/css/fontawesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../sc/css/bootstrap.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="../sc/css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="../sc/css/flexslider.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="../sc/css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="../sc/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="../sc/js/respond.min.js"></script>
+	<![endif]-->
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        .form-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .btn-berita {
+            background-color: #66D37E;
+            color: #fff;
+        }
+        .form-berita {
+            border: 1px solid #66D37E;
+            padding: 20px;
+            background-color: #e7f9ed;
+            border-radius: 8px;
+        }
+        .btn-cerita {
+            background-color: #f5e44e;
+            color: #000;
+        }
+        .form-cerita {
+            border: 1px solid #f5e44e;
+            padding: 20px;
+            background-color: #fffbed;
+            border-radius: 8px;
+        }
+        .disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+    </style>
+
+	</head>
+	<body>
+	<!-- ***** Preloader Start ***** -->
+	<div id="js-preloader" class="js-preloader">
+		<div class="preloader-inner">
+		  <span class="dot"></span>
+		  <div class="dots">
+			<span></span>
+			<span></span>
+			<span></span>
+		  </div>
+		</div>
+	  </div>
+	  <!-- ***** Preloader End ***** -->
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container-wrap">
+			<div class="top-menu">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="https://pelajarkotabatik.org">PelajarKotabatik</a></div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+	<div class="container-wrap">
+		<aside id="fh5co-hero">
+			<div class="flexslider">
+				<ul class="slides">
+					<li style="background-image: url(../assets/images/base/opini.png);">
+					</li>
+				</ul>
+			</div>
+		</aside>
+	</div>
+	<div class="container-wrap">
+        <div id="fh5co-services">
+			<div class="row">
+				<div class="text-center animate-box">
+					<div class="services">
+						<div class="desc">
+							<h3>Formulir Opini & Berita</h3>
+							<p>Silahkan pilih salah satu untuk mengisi formulir</p>
+                            <div class="container text-left">
+                                <div class="d-flex justify-content-center mb-3">
+                                    <button class="btn btn-berita mx-2" id="btn-berita">Masukan Berita</button>
+                                    <button class="btn btn-cerita mx-2" id="btn-cerita">Masukan Cerita/Opini</button>
+                                </div>
+                                
+                                <div id="form-berita" class="form-container form-berita">
+                                    <h3>Form Pengiriman Berita</h3>
+                                    <p>Form ini diperuntukkan untuk membantu memudahkan pengiriman berita dari kader IPM ke tim redaksi PD IPM Kota Pekalongan. Berikut beberapa hal yang perlu diperhatikan untuk mengisi form:</p>
+                                    <ul>
+                                        <li>Informasi detail dan mendalam terkait hal yang diberitakan</li>
+                                        <li>Kutipan tokoh/narasumber yang hadir dalam kegiatan, lengkap dengan nama terang</li>
+                                        <li>Foto dokumentasi kegiatan yang representatif</li>
+                                    </ul>
+                                    <p>DISCLAIMER: pelajarkotabatik.org tidak menerima berita berupa promosi/advertorial untuk kepentingan politik apapun.</p>
+                                    <p>Jenis berita yang diterima:</p>
+                                    <ul>
+                                        <li>Berita Kegiatan</li>
+                                        <li>Berita Prestasi Kader</li>
+                                        <li>Berita Duka Kehilangan Kader</li>
+                                    </ul>
+                                    <form id="beritaForm">
+                                        <input type="hidden" name="form_type" value="Berita">
+                                        <div class="mb-3">
+                                            <label for="beritaJudul" class="form-label">Judul Berita</label>
+                                            <input type="text" class="form-control" id="beritaJudul" name="judul" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="beritaIsi" class="form-label">Isi Berita</label>
+                                            <textarea class="form-control" id="beritaIsi" name="isi" rows="5" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="beritaPenulis" class="form-label">Nama Penulis</label>
+                                            <input type="text" class="form-control" id="beritaPenulis" name="penulis" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="beritaKontak" class="form-label">Kontak Penulis (Email/Telepon)</label>
+                                            <input type="text" class="form-control" id="beritaKontak" name="kontak" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="beritaTanggal" class="form-label">Tanggal Kegiatan</label>
+                                            <input type="date" class="form-control" id="beritaTanggal" name="tanggal" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="beritaLokasi" class="form-label">Lokasi Kegiatan</label>
+                                            <input type="text" class="form-control" id="beritaLokasi" name="lokasi" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="beritaKutipan" class="form-label">Kutipan Tokoh/Narasumber</label>
+                                            <textarea class="form-control" id="beritaKutipan" name="kutipan" rows="3" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="beritaFoto" class="form-label">Tautan Dokumentasi</label>
+                                            <input type="text" class="form-control" id="beritaFoto" name="dokumentasi" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-berita">Kirim Formulir</button>
+                                    </form>
+                                </div>
+                                
+                                <div id="form-cerita" class="form-container form-cerita">
+                                    <h3>Form Pengiriman Cerita/Opini</h3>
+                                    <form id="ceritaForm">
+                                        <input type="hidden" name="form_type" value="Cerita/Opini">
+                                        <div class="mb-3">
+                                            <label for="ceritaJudul" class="form-label">Judul Cerita/Opini</label>
+                                            <input type="text" class="form-control" id="ceritaJudul" name="judul" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ceritaIsi" class="form-label">Isi Cerita/Opini</label>
+                                            <textarea class="form-control" id="ceritaIsi" name="isi" rows="5" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ceritaPenulis" class="form-label">Nama Penulis</label>
+                                            <input type="text" class="form-control" id="ceritaPenulis" name="penulis" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ceritaKontak" class="form-label">Kontak Penulis (Email/Telepon)</label>
+                                            <input type="text" class="form-control" id="ceritaKontak" name="kontak" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ceritaKategori" class="form-label">Kategori Cerita/Opini</label>
+                                            <input type="text" class="form-control" id="ceritaKategori" name="kategori" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-cerita">Kirim Formulir</button>
+                                    </form>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- END container-wrap -->
+
+	<div class="container-wrap">
+		<footer id="fh5co-footer" role="contentinfo">
+			<div class="row">
+				<div class="col-md-3 fh5co-widget">
+					<h4>tentang website</h4>
+					<p>Ikatan Pelajar Muhammadiyah (IPM) Kota Pekalongan adalah organisasi yang berkomitmen untuk mengembangkan potensi pelajar melalui berbagai kegiatan edukatif, sosial, dan kultural.</p>
+				</div>
+				<div class="col-md-3 col-md-push-1">
+					<h4>Postingan terbaru</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="https://buletin.pelajarkotabatik.org/">Buletin IPM</a></li>
+						<li><a href="https://ipmoutlet.pelajarkotabatik.org">Ipm's Outlet</a></li>
+						<li><a href="https://pelajarkotabatik.org/blog/fortasi">Fortasi 2024</a></li>
+						<li><a href="https://pelajarkotabatik.org">Pimpinan Daerah</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-3 col-md-push-1">
+					<h4>Links</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="https://pelajarkotabatik.org">Beranda</a></li>
+						<li><a href="https://buletin.pelajarkotabatik.org">Blog</a></li>
+						<li><a href="https://pelajarkotabatik.org/about">Tentang</a></li>
+						<li><a href="https://pelajarkotabatik.org/about/#struktur">Struktur</a></li>
+						<li><a href="https://pelajarkotabatik.org/contact.html">Kontak</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-3">
+					<h4>Contact Information</h4>
+					<ul class="fh5co-footer-links">
+						<li> Jl. KH. Mansyur No.2, Bendan,<br> Kec. Pekalongan Barat, Kota Pekalogan</li>
+						<li><a href="tel://0857-4796-4458">0857-4796-4458 (Ihza)</a></li>
+						<li><a href="tel://0896-1460-7210">0896-1460-7210 (Harum)</a></li>
+						<li><a href="mailto:ipmkotabatik@gmail.com">ipmkotabatik@gmail.com</a></li>
+						<li><a href="mailto:ipm@pelajarkotabatik.org">ipm@pelajarkotabatik.org</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy;2024 PD IPM Kota Pekalongan | dikelola oleh Pengkaji Ilmu Pengetahuan PD IPM Kota Pekalongan</small> 
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="https://instagram.com/ipmkotabatik"><i class="fa-brands fa-square-instagram"></i></a></li>
+							<li><a href="https://youtube.com"><i class="fa-brands fa-square-youtube"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div><!-- END container-wrap -->
+	</div>
+
+	<div class="gototop js-top">
+		<a class="js-gotop"><i class="fa-solid fa-angles-up"></i></a>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- jQuery -->
+	<script src="../sc/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../sc/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../sc/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../sc/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="../sc/js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="../sc/js/jquery.magnific-popup.min.js"></script>
+	<script src="../sc/js/magnific-popup-options.js"></script>
+	<!-- Counters -->
+	<script src="../sc/js/jquery.countTo.js"></script>
+	<!-- Main -->
+	<script src="../sc/js/main.js"></script>
+    <script>
+        emailjs.init("uZ2f8ZVK5E38hdtuh");
+
+        document.getElementById('btn-berita').addEventListener('click', function() {
+            document.getElementById('form-berita').style.display = 'block';
+            document.getElementById('form-cerita').style.display = 'none';
+            this.classList.add('disabled');
+            document.getElementById('btn-cerita').classList.add('disabled');
+        });
+
+        document.getElementById('btn-cerita').addEventListener('click', function() {
+            document.getElementById('form-berita').style.display = 'none';
+            document.getElementById('form-cerita').style.display = 'block';
+            this.classList.add('disabled');
+            document.getElementById('btn-berita').classList.add('disabled');
+        });
+
+        document.getElementById('beritaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_5shjhkr', 'template_8681nbj', this)
+                .then(function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil!',
+                        text: 'Formulir Berita berhasil dikirim.'
+                    });
+                    document.getElementById('beritaForm').reset();
+                    document.getElementById('btn-berita').classList.remove('disabled');
+                    document.getElementById('btn-cerita').classList.remove('disabled');
+                    document.getElementById('form-berita').style.display = 'none';
+                }, function(error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Gagal!',
+                        text: 'Terjadi kesalahan, silahkan coba lagi.'
+                    });
+                });
+        });
+
+        document.getElementById('ceritaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_5shjhkr', 'template_hbsituu', this)
+                .then(function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil!',
+                        text: 'Formulir Cerita/Opini berhasil dikirim.'
+                    });
+                    document.getElementById('ceritaForm').reset();
+                    document.getElementById('btn-cerita').classList.remove('disabled');
+                    document.getElementById('btn-berita').classList.remove('disabled');
+                    document.getElementById('form-cerita').style.display = 'none';
+                }, function(error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Gagal!',
+                        text: 'Terjadi kesalahan, silahkan coba lagi.'
+                    });
+                });
+        });
+    </script>
+
+	</body>
+</html>
