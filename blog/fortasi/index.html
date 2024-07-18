@@ -36,8 +36,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="https://pelajarkotabatik.org/logo.ico">
-	<link rel="shortcut icon" type="image/x-icon" href="https://pelajarkotabatik.org/logo.png">
+	<link rel="icon" type="image/png" href="https://pelajarkotabatik.org/blog/fortasi/icon.png">>
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="../../sc/css/animate.css">
 	<!-- Bootstrap  -->
@@ -89,6 +88,35 @@
             font-size: 16px;
             color: #6c757d;
         }
+		/* CSS */
+		.button-54 {
+		font-family: "Open Sans", sans-serif;
+		font-size: 16px;
+		letter-spacing: 2px;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #000;
+		cursor: pointer;
+		border: 3px solid;
+		padding: 0.25em 0.5em;
+		box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+		position: center;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+		}
+
+		.button-54:active {
+		box-shadow: 0px 0px 0px 0px;
+		top: 5px;
+		left: 5px;
+		}
+
+		@media (min-width: 768px) {
+		.button-54 {
+			padding: 0.25em 0.75em;
+		}
+		}
     </style>
 
 	</head>
@@ -124,25 +152,18 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container-wrap">
-		<div class="countdown">
-			<h1>Hitung Mundur Fortasi</h1>
-			<div class="row justify-content-md-center">
-				<div class="col-lg-3">
-					<div class="time" id="days">00</div>
-					<div class="label">Days</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="time" id="hours">00</div>
-					<div class="label">Hours</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="time" id="minutes">00</div>
-					<div class="label">Minutes</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="time" id="seconds">00</div>
-					<div class="label">Seconds</div>
+	<div id="fh5co-services">
+		<div class="row">
+			<div class="text-center animate-box">
+				<div class="services">
+					<div class="desc">
+						<h3>Klik Untuk Baca</h3>
+						<div class="container text-center">
+							<div class="d-flex justify-content-center mb-3">
+								<button id="downloadBtn" class="button-54 btn mx-2" onclick="handleAlod()">Baca Majalah Fortasi</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -227,31 +248,73 @@
 	<script src="../../sc/js/jquery.countTo.js"></script>
 	<!-- Main -->
 	<script src="../../sc/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
-        function updateCountdown() {
-            const now = new Date();
-            const targetDate = new Date('2024-07-22T00:00:00+07:00'); // Set target date with timezone offset for WIB (UTC+7)
-            const timeDifference = targetDate - now;
 
-            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+function handleAlod() {
+    Swal.fire({
+      title: "Mau baca majalah dari mana?",
+      showDenyButton: true,
+      showCloseButton: true,
+      denyButtonColor: "#3085d6",
+      confirmButtonText: "Download Majalah",
+      denyButtonText: `majalah Online`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Tunggu Sebentar...',
+          text: 'Sedang menyiapkan majalah untuk diunduh.',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 3000, // 3 detik
+          onBeforeOpen: () => {
+            Swal.showLoading();
+          },
+        });
+    
+        // Tunggu 3 detik sebelum mengunduh file
+        setTimeout(() => {
+          // Simulasi pengunduhan file (ganti URL sesuai dengan lokasi file)
+          const downloadLink = document.createElement('a');
+          downloadLink.href = 'https://pelajarkotabatik.org/blog/fortasi/majalah.pdf';
+          downloadLink.download = 'majalah.pdf';
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+    
+          // Tutup SweetAlert setelah pengunduhan selesai
+          Swal.close();
+        }, 3000);
+      } else if (result.isDenied) {
+        Swal.fire({
+          title: 'Tunggu Sebentar...',
+          text: 'Menuju Ke Majalah Digital',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 1000, // 1 detik
+          onBeforeOpen: () => {
+            Swal.showLoading();
+          },
+        });
+    
+        // Tunggu 3 detik sebelum mengunduh file
+        setTimeout(() => {
+          // Simulasi pengunduhan file (ganti URL sesuai dengan lokasi file)
+          const Katalog = document.createElement('a');
+          Katalog.href = 'https://pelajarkotabatik.org/blog/fortasi/majalah';
+          document.body.appendChild(Katalog);
+          Katalog.click();
+          document.body.removeChild(Katalog);
+    
+          // Tutup SweetAlert setelah pengunduhan selesai
+          Swal.close();
+        }, 3000);
+      }
+    });
 
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-
-            if (timeDifference < 0) {
-                clearInterval(countdownInterval);
-                document.querySelector('.countdown').innerHTML = '<h1>Countdown has ended!</h1>';
-            }
-        }
-
-        const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
+  }
+	</script>
 
 	</body>
 </html>
