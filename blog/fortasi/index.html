@@ -127,6 +127,9 @@
 			margin-left: 10%;
 			margin-right: 10%;
 		}
+		.margin-ats {
+			margin-top: 20px;
+		}
     </style>
 
 	</head>
@@ -187,6 +190,12 @@
 						<div class="container text-center">
 							<div class="d-flex justify-content-center mb-3">
 								<button id="downloadBtn" class="button-54 btn mx-2" onclick="handleAlod()">Baca Majalah Fortasi</button>
+							</div>
+						</div>
+						<h3 class="margin-ats">Klik Dibawah untuk Dokumentasi Fortasi</h3>
+						<div class="container text-center">
+							<div class="d-flex justify-content-center mb-3">
+								<button id="downloadBtn" class="button-54 btn mx-2" onclick="handleDog()">Dokumentasi Fortasi</button>
 							</div>
 						</div>
 					</div>
@@ -329,17 +338,43 @@ function handleAlod() {
           // Simulasi pengunduhan file (ganti URL sesuai dengan lokasi file)
           const Katalog = document.createElement('a');
           Katalog.href = 'https://pelajarkotabatik.org/blog/fortasi/majalah';
-          document.body.appendChild(Katalog);
-          Katalog.click();
-          document.body.removeChild(Katalog);
-    
-          // Tutup SweetAlert setelah pengunduhan selesai
-          Swal.close();
-        }, 3000);
-      }
-    });
+				document.body.appendChild(Katalog);
+				Katalog.click();
+				document.body.removeChild(Katalog);
+			
+				// Tutup SweetAlert setelah pengunduhan selesai
+				Swal.close();
+				}, 3000);
+			}
+			});
 
-  }
+		}
+function handleDog() {
+    Swal.fire({
+          title: 'Tunggu Sebentar...',
+          text: 'Menuju Ke Google Drive',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 1000, // 1 detik
+          onBeforeOpen: () => {
+            Swal.showLoading();
+          },
+        });
+    
+        // Tunggu 3 detik sebelum mengunduh file
+        setTimeout(() => {
+          // Simulasi pengunduhan file (ganti URL sesuai dengan lokasi file)
+          const Katalog = document.createElement('a');
+          Katalog.href = 'https://drive.google.com/drive/folders/17pwm1GdTL55xIEXcgjwTV9rX4-kqvwle?usp=drive_link';
+				document.body.appendChild(Katalog);
+				Katalog.click();
+				document.body.removeChild(Katalog);
+			
+				// Tutup SweetAlert setelah pengunduhan selesai
+				Swal.close();
+				}, 3000);
+
+		}
 	</script>
 
 	</body>
