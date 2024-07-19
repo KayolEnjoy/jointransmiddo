@@ -56,6 +56,10 @@
 <div id="carouselExample" class="carousel slide" data-wrap="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
+      <img src="cover1.png" class="w-100" alt="Cover Depan" loading="lazy">
+      <img src="cover1.png" class="w-25" alt="Cover Depan" loading="lazy">
+    </div>
+    <div class="carousel-item">
       <img src="1.png" class="w-100" alt="First slide" loading="lazy">
       <img src="1.png" class="w-25" alt="First slide" loading="lazy">
     </div>
@@ -183,6 +187,10 @@
       <img src="Iklan.png" class="w-100" alt="Twenty-sixth slide" loading="lazy">
       <img src="Iklan.png" class="w-25" alt="Twenty-sixth slide" loading="lazy">
     </div>
+    <div class="carousel-item">
+      <img src="cover2.png" class="w-100" alt="Cover Belakang" loading="lazy">
+      <img src="cover2.png" class="w-25" alt="Cover Belakang" loading="lazy">
+    </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -197,10 +205,10 @@
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 box-shadow">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal page-number">Halaman ke-1</h4>
+        <h4 class="my-0 font-weight-normal page-number">Majalah Fortasi 2024</h4>
       </div>
       <div class="card-body">
-        <div class="link-home"><a href="https://pelajarkotabatik.org/blog/fortasi" class="link-home btn btn-primary">Halaman Fortasi</a></div>
+        <div class="link-home"><button id="downloadBtn" class="btn btn-lg btn-block btn-primary btn mx-2" onclick="handleAlod()">Download Majalah</button></div>
       </div>
     </div>
   </div>
@@ -209,14 +217,51 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
    $('#carouselExample').carousel({
         interval: false
     });
     $('#carouselExample').on('slid.bs.carousel', function () {
-        var currentIndex = $('div.active').index() + 1;
-        $('.page-number').text('Halaman ke-' + currentIndex);
+        var currentIndex = $('div.active').index();
+        var totalItems = $('.carousel-item').length;
+        var pageNumberText = '';
+        
+        if (currentIndex === 0) {
+            pageNumberText = 'Majalah Fortasi 2024';
+        } else if (currentIndex === totalItems - 1) {
+            pageNumberText = 'Terimakasih Sudah Membaca';
+        } else {
+            pageNumberText = 'Halaman ke-' + currentIndex;
+        }
+        
+        $('.page-number').text(pageNumberText);
     });
+    function handleAlod() {
+      Swal.fire({
+          title: 'Tunggu Sebentar...',
+          text: 'Menyiapkan majalah untuk diunduh',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 1000, // 1 detik
+          onBeforeOpen: () => {
+            Swal.showLoading();
+          },
+        });
+    
+        // Tunggu 3 detik sebelum mengunduh file
+        setTimeout(() => {
+          // Simulasi pengunduhan file (ganti URL sesuai dengan lokasi file)
+          const Katalog = document.createElement('a');
+          Katalog.href = 'https://pelajarkotabatik.org/blog/fortasi/majalah.pdf';
+                document.body.appendChild(Katalog);
+                Katalog.click();
+                document.body.removeChild(Katalog);
+            
+                // Tutup SweetAlert setelah pengunduhan selesai
+                Swal.close();
+                }, 3000);
+            }
 </script>
 </body>
 </html>
