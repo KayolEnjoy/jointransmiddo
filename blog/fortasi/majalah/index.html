@@ -29,6 +29,10 @@
             margin-top: 10px;
             font-size: 18px;
         }
+        .link-home {
+            text-align: center;
+            margin-top: 10px;
+        }
         .w-100 {
           display: none;
         }
@@ -49,7 +53,7 @@
 </head>
 <body>
 
-<div id="carouselExample" class="carousel slide" data-ride="carousel" data-wrap="false">
+<div id="carouselExample" class="carousel slide" data-wrap="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="1.png" class="w-100" alt="First slide" loading="lazy">
@@ -189,13 +193,26 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="page-number">Halaman ke-1</div>
-
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal page-number">Halaman ke-1</h4>
+      </div>
+      <div class="card-body">
+        <div class="link-home"><a href="https://pelajarkotabatik.org/blog/fortasi" class="link-home btn btn-primary">Halaman Fortasi</a></div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
+   $('#carouselExample').carousel({
+        interval: false
+    });
     $('#carouselExample').on('slid.bs.carousel', function () {
         var currentIndex = $('div.active').index() + 1;
         $('.page-number').text('Halaman ke-' + currentIndex);
